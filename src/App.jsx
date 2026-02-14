@@ -1,6 +1,7 @@
 import './App.css'
 import FirstComp from './PropsContainer/FirstComp';
 import SecondComp from './PropsContainer/SecondComp';
+import StateMng from './StateMng'
 function App(){
 
   const mycar={
@@ -12,7 +13,7 @@ function App(){
   return (<div className="container">
        <FirstComp name="kumar" /> 
        <SecondComp mycar= {mycar} />  {/*passing object using props */}
-
+       <StateMng />
   </div>)
 }
 
