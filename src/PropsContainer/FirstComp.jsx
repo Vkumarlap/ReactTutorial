@@ -5,8 +5,9 @@ const FirstComp=(prop)=>{
    
 
     return(
-<div>
-    <h1>{prop.name}</h1>
+<div className="container">
+    <h1>Passing varible props </h1>
+    <h3>{prop.name}</h3>
 </div>
 
     );

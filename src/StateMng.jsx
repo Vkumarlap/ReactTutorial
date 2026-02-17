@@ -12,7 +12,7 @@ useEffect(()=>{
 
 
 
-return (<div>
+return (<div className="container">
 <h1>{count}</h1>
 <button type='button' onClick={()=>setcount(count+1)} >Click to count++</button>
 <h1>{msg}</h1>

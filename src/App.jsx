@@ -1,4 +1,5 @@
 import './App.css'
+import AsyncComp from './PropsContainer/AsyncComp';
 import FirstComp from './PropsContainer/FirstComp';
 import FourthComp from './PropsContainer/FourthComp';
 import SecondComp from './PropsContainer/SecondComp';
@@ -6,7 +7,7 @@ import StateMng from './StateMng'
 import { useState } from 'react';
 function App(){
 
-const[select,setSelect]=useState(true);
+const[select,setSelect]=useState(false);
 
   const mycar={
     name:"skoda",
@@ -14,13 +15,18 @@ const[select,setSelect]=useState(true);
       price:2100000
   }
 
-  return (<div className="container">
+  return (<div>
+    {/* <div className="maincontainer">
     {select?<FirstComp name="Car details are not available currently"/>:<SecondComp mycar={mycar}/>}
        <FirstComp name="kumar" /> 
        <SecondComp mycar= {mycar} />  passing object using props
        <StateMng />
-       <FourthComp />
-  </div>)
+  
+  </div>
+  <div><FourthComp /></div> */}
+  <AsyncComp />
+  </div>
+)
 }
 
 export default App;

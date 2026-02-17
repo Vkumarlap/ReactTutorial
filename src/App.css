@@ -42,12 +42,42 @@
 } */
 
 
-h1{
-  color:rgb(236, 222, 222);
 
-}
 .container{
- 
-  background-color: dimgray;
+   
+   
+   height: 50%;
+  background-color: rgb(180, 230, 137);
+  margin: 20px;
+}
+.maincontainer{
+  height: 30rem;
+  width: 100%;
+  display: flex;
+  
+  background-color: rgb(229, 241, 123);
+}
+.fcont{
+height: auto;
+
+background-color: rgb(168, 181, 144);
+
 }
 
+.async{
+  background-color: azure;
+  border-radius: 20px;
+  height: 16rem;
+  width: 16rem;
+  margin-top: 15rem;
+  
+}
+.asyncCont{
+display: flex;
+  height: 70rem;
+  width: 70rem;
+  justify-content: space-around;
+background-color: rgb(145, 145, 222);
+
+
+}
