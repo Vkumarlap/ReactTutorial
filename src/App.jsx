@@ -2,6 +2,7 @@ import './App.css'
 import AsyncComp from './PropsContainer/AsyncComp';
 import FirstComp from './PropsContainer/FirstComp';
 import FourthComp from './PropsContainer/FourthComp';
+import PostRequestComp from './PropsContainer/PostRequestComp';
 import SecondComp from './PropsContainer/SecondComp';
 import StateMng from './StateMng'
 import { useState } from 'react';
@@ -19,12 +20,13 @@ const[select,setSelect]=useState(false);
     {/* <div className="maincontainer">
     {select?<FirstComp name="Car details are not available currently"/>:<SecondComp mycar={mycar}/>}
        <FirstComp name="kumar" /> 
-       <SecondComp mycar= {mycar} />  passing object using props
+       <SecondComp mycar= {mycar} />  
        <StateMng />
   
   </div>
-  <div><FourthComp /></div> */}
-  <AsyncComp />
+  <div><FourthComp /></div>
+  <AsyncComp /> */}
+  <PostRequestComp/>
   </div>
 )
 }

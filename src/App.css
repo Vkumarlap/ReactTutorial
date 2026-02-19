@@ -1,83 +1,83 @@
- #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-/*
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */
 
 
 
-.container{
-   
-   
-   height: 50%;
-  background-color: rgb(180, 230, 137);
-  margin: 20px;
+/* Import modern font */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
-.maincontainer{
-  height: 30rem;
-  width: 100%;
+
+/* Main Page Background */
+.maincontainer {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
   display: flex;
-  
-  background-color: rgb(229, 241, 123);
-}
-.fcont{
-height: auto;
-
-background-color: rgb(168, 181, 144);
-
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
 }
 
-.async{
-  background-color: azure;
-  border-radius: 20px;
-  height: 16rem;
-  width: 16rem;
-  margin-top: 15rem;
-  
+/* Card Component */
+.container {
+  width: 300px;
+  padding: 25px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: white;
+  transition: all 0.3s ease;
 }
-.asyncCont{
-display: flex;
-  height: 70rem;
-  width: 70rem;
-  justify-content: space-around;
-background-color: rgb(145, 145, 222);
 
+/* Hover Effect */
+.container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(77, 219, 16, 0.35);
+}
 
+/* Headings */
+.container h2 {
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* Paragraph */
+.container p {
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* Button (optional if you use one) */
+.container button {
+  margin-top: 15px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  color: #764ba2;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.container button:hover {
+  background: #f1f1f1;
+}
+
+.form{
+  background-color: rgb(172, 120, 120);
+  min-height: 50vh;
+  width: 50vh;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  padding: 40px;
+  align-items:normal;
 }

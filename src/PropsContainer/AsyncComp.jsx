@@ -19,11 +19,11 @@ const AsyncComp = () => {
     }, []);
 
     return (
-        <div className="asyncCont">
+        <div className="maincontainer">
             {
                 user.map((item, index) => {
                     return (
-                        <div className="async" key={index}>
+                        <div className="container" key={index}>
                             <h2>{item.name}</h2>
                             <h2>{item.id}</h2>
                             <h2>{item.desc}</h2>
