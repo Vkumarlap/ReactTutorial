@@ -3,20 +3,21 @@ const PostRequestComp=()=>{
 
      
 const[name,setName]=useState("")
-const[description,setDescription]=useState("")
-const[ price,setPrice]=useState("")
-const[ availabilty,setAvailability]=useState("")
+const[desc,setDesc]=useState("")
+const[ price,setPrice]=useState(0)
+const[ availabilty,setAvailability]=useState(false)
 const[ brand,setBrand]=useState("")
 
 
-const product={name,description,price,availabilty,brand}
+const product={name,desc,brand,price,availabilty}
 
 const handler=async(e)=>{
 e.preventDefault();
 console.log(product);
-const response= await fetch("localhost:8080/api/product ",{
-    method:"POST", headers:{"content-Type":"Application/json"}
-})
+const response= await fetch("http://localhost:8080/api/product",{
+    method:"POST", headers:{"Content-Type":"application/json"},
+body: JSON.stringify(product)
+});
 
 }
 
@@ -28,7 +29,7 @@ const response= await fetch("localhost:8080/api/product ",{
  <label>name</label> <br/>
 <input type='text' name="name" onChange={(e)=>setName(e.target.value)}/> <br/>
 <label > desc</label>
-<input type='text' name="name" onChange={(e)=>setDescription(e.target.value)}/> <br/>
+<input type='text' name="name" onChange={(e)=>setDesc(e.target.value)}/> <br/>
 <label > price</label>
 
 <input type='text' name="name" onChange={(e)=>setPrice(e.target.value)}/>
