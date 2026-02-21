@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 const AsyncComp = () => {
 
     const [user, setUser] = useState([]);
+
 const userdata = async () => {
+  
     try {
         const response = await fetch("http://localhost:8080/api/products");
 
@@ -13,7 +15,7 @@ const userdata = async () => {
 
         const data = await response.json();
         setUser(data);
-        alert("Products fetched successfully");
+        // alert("Products fetched successfully");
 
     } catch (error) {
         console.error("Error fetching data:", error);

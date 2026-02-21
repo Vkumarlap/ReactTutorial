@@ -1,4 +1,5 @@
 import './App.css'
+import MainPage from './MainPage';
 import AsyncComp from './PropsContainer/AsyncComp';
 import FirstComp from './PropsContainer/FirstComp';
 import FourthComp from './PropsContainer/FourthComp';
@@ -26,7 +27,10 @@ const[select,setSelect]=useState(false);
   </div>
   <div><FourthComp /></div>
   <AsyncComp /> */}
-  <PostRequestComp/>
+  {/* <PostRequestComp/> */}
+  <MainPage/>
+  <FirstComp name="kumar" age="22" /> 
+  <div><FourthComp /></div>
   </div>
 )
 }

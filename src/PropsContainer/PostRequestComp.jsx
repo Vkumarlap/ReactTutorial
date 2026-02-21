@@ -1,54 +1,112 @@
 import { useState } from "react";
-const PostRequestComp=()=>{
 
-     
-const[name,setName]=useState("")
-const[desc,setDesc]=useState("")
-const[ price,setPrice]=useState(0)
-const[ availabilty,setAvailability]=useState(false)
-const[ brand,setBrand]=useState("")
+const PostRequestComp = () => {
 
+  const [name, setName] = useState("");
+  const [desc, setDesc] = useState("");
+  const [price, setPrice] = useState(0);
+  const [availability, setAvailability] = useState(false);
+  const [brand, setBrand] = useState("");
 
-const product={name,desc,brand,price,availabilty}
+  const handler = async (e) => {
+    e.preventDefault();  //This prevents the page reload.
 
-const handler=async(e)=>{
-e.preventDefault();
-console.log(product);
-const response= await fetch("http://localhost:8080/api/product",{
-    method:"POST", headers:{"Content-Type":"application/json"},
-body: JSON.stringify(product)
-});
+    const product = {
+      name,
+      desc,
+      brand,
+      price,
+      availability
+    };
 
-}
+    console.log(product);
 
+    try {
+      const response = await fetch("http://localhost:8080/api/product", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(product)
+      });
 
+      if (!response.ok) {
+        throw new Error("Failed to add product");
+      }
 
-    return(
-<div className="form"> 
-    <form onSubmit={handler}>
- <label>name</label> <br/>
-<input type='text' name="name" onChange={(e)=>setName(e.target.value)}/> <br/>
-<label > desc</label>
-<input type='text' name="name" onChange={(e)=>setDesc(e.target.value)}/> <br/>
-<label > price</label>
+      alert("Product added successfully");
 
-<input type='text' name="name" onChange={(e)=>setPrice(e.target.value)}/>
- <br/>
-<label >brand </label>
+      
+      setName("");
+      setDesc("");
+      setPrice(0);
+      setBrand("");
+      setAvailability(false);
 
-<input type='text' name="name" onChange={(e)=>setBrand(e.target.value)}/> <br/>
-<label >availabbitly </label>
+    } catch (error) {
+      console.error("Failed to add product:", error);
+      alert("Product failed to add");
+    }
+  };
 
-<input type='text' name="name" onChange={(e)=>setAvailability(e.target.value)}/> <br/>
+  return (
+    <div className="form-container">
+      <form className="product-form" onSubmit={handler}>
+        <h2>Add Product</h2>
 
+        <div className="form-group">
+          <label>Name</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
 
-<button type="submit">Submit</button>
-</form>
-</div>
+        <div className="form-group">
+          <label>Description</label>
+          <input
+            type="text"
+            value={desc}
+            onChange={(e) => setDesc(e.target.value)}
+            required
+          />
+        </div>
 
+        <div className="form-group">
+          <label>Price</label>
+          <input
+            type="number"
+            value={price}
+            onChange={(e) => setPrice(Number(e.target.value))}
+            required
+          />
+        </div>
 
-    );
+        <div className="form-group">
+          <label>Brand</label>
+          <input
+            type="text"
+            value={brand}
+            onChange={(e) => setBrand(e.target.value)}
+            required
+          />
+        </div>
 
-}
+        <div className="form-group">
+          <label>Availability</label>
+          <select
+            value={availability}
+            onChange={(e) => setAvailability(e.target.value === "true")}
+          >
+            <option value="true">Available</option>
+            <option value="false">Out of Stock</option>
+          </select>
+        </div>
+
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+};
 
 export default PostRequestComp;
